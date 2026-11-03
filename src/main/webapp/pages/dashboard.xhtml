@@ -1,0 +1,306 @@
+<CodeBlock language="xml" editable>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="jakarta.faces.html"
+xmlns:f="jakarta.faces.core"
+xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<title>TRAVELZEN | Panel de administración</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0"/>
+
+<h:outputStylesheet
+library="css"
+name="estilo.css"/>
+</h:head>
+
+<h:body>
+
+<h:form id="formDashboard">
+
+<div class="layout">
+
+<!-- MENU LATERAL -->
+
+<aside class="sidebar">
+
+<div class="brand">
+<div class="brand-icon">
+<i class="pi pi-send"></i>
+</div>
+
+<div>
+<h2>TRAVELZEN</h2>
+<span>TRAVEL MANAGEMENT</span>
+</div>
+</div>
+
+<div class="menu-title">MENÚ PRINCIPAL</div>
+
+<a href="dashboard.xhtml" class="menu-link active">
+<i class="pi pi-home"></i>
+Dashboard
+</a>
+
+<a href="#" class="menu-link">
+<i class="pi pi-users"></i>
+Usuarios
+</a>
+
+<a href="#" class="menu-link">
+<i class="pi pi-user"></i>
+Clientes
+</a>
+
+<a href="#" class="menu-link">
+<i class="pi pi-briefcase"></i>
+Agentes
+</a>
+
+<div class="menu-title">OPERACIONES</div>
+
+<a href="#" class="menu-link">
+<i class="pi pi-globe"></i>
+Vuelos
+</a>
+
+<a href="#" class="menu-link">
+<i class="pi pi-calendar"></i>
+Reservas
+</a>
+
+<a href="#" class="menu-link">
+<i class="pi pi-wallet"></i>
+Pagos
+</a>
+
+<a href="#" class="menu-link">
+<i class="pi pi-file"></i>
+Comprobantes
+</a>
+
+<div class="menu-title">SISTEMA</div>
+
+<a href="#" class="menu-link">
+<i class="pi pi-database"></i>
+Base de datos
+</a>
+
+<a href="#" class="menu-link">
+<i class="pi pi-chart-bar"></i>
+Reportes
+</a>
+
+<div class="sidebar-footer">
+<i class="pi pi-shield"></i>
+Sistema seguro TRAVELZEN
+</div>
+
+</aside>
+
+<!-- CONTENIDO PRINCIPAL -->
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div>
+<h3>Panel de administración</h3>
+<span>Bienvenido al sistema TRAVELZEN</span>
+</div>
+
+<div class="admin-profile">
+<div class="avatar">TZ</div>
+<div>
+<strong>Administrador</strong>
+<span>Panel de control</span>
+</div>
+</div>
+
+</header>
+
+<section class="welcome">
+<div>
+<span class="welcome-tag">
+SISTEMA DE GESTIÓN INTERNACIONAL
+</span>
+
+<h1>Bienvenido a TRAVELZEN</h1>
+
+<p>
+Gestiona clientes, vuelos, reservas y
+operaciones desde un solo lugar.
+</p>
+</div>
+
+<div class="welcome-icon">
+<i class="pi pi-globe"></i>
+</div>
+</section>
+
+<!-- ESTADISTICAS -->
+
+<section class="section-heading">
+<div>
+<h2>Resumen general</h2>
+<p>Información obtenida de MySQL</p>
+</div>
+
+<p:commandButton
+value="Actualizar"
+icon="pi pi-refresh"
+action="#{dashboardBean.inicializar}"
+update="formDashboard"
+styleClass="refresh-button"/>
+</section>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<div class="stat-icon gold">
+<i class="pi pi-users"></i>
+</div>
+<span>Total usuarios</span>
+<h2>
+<h:outputText
+value="#{dashboardBean.totalUsuarios}"/>
+</h2>
+<small>Registrados en el sistema</small>
+</div>
+
+<div class="stat-card">
+<div class="stat-icon blue">
+<i class="pi pi-user"></i>
+</div>
+<span>Clientes</span>
+<h2>
+<h:outputText
+value="#{dashboardBean.totalClientes}"/>
+</h2>
+<small>Clientes registrados</small>
+</div>
+
+<div class="stat-card">
+<div class="stat-icon green">
+<i class="pi pi-briefcase"></i>
+</div>
+<span>Agentes</span>
+<h2>
+<h:outputText
+value="#{dashboardBean.totalAgentes}"/>
+</h2>
+<small>Personal registrado</small>
+</div>
+
+<div class="stat-card">
+<div class="stat-icon purple">
+<i class="pi pi-send"></i>
+</div>
+<span>Vuelos</span>
+<h2>
+<h:outputText
+value="#{dashboardBean.totalVuelos}"/>
+</h2>
+<small>Vuelos registrados</small>
+</div>
+
+<div class="stat-card">
+<div class="stat-icon orange">
+<i class="pi pi-calendar"></i>
+</div>
+<span>Reservas</span>
+<h2>
+<h:outputText
+value="#{dashboardBean.totalReservas}"/>
+</h2>
+<small>Reservas registradas</small>
+</div>
+
+<div class="stat-card">
+<div class="stat-icon teal">
+<i class="pi pi-wallet"></i>
+</div>
+<span>Pagos</span>
+<h2>
+<h:outputText
+value="#{dashboardBean.totalPagos}"/>
+</h2>
+<small>Pagos registrados</small>
+</div>
+
+</div>
+
+<!-- BASE DE DATOS -->
+
+<section class="database-section">
+
+<div class="section-heading">
+<div>
+<h2>Base de datos TRAVELZEN</h2>
+<p>Tablas detectadas en MySQL</p>
+</div>
+
+<div class="table-counter">
+<i class="pi pi-database"></i>
+
+<h:outputText
+value="#{dashboardBean.totalTablas}"/>
+
+Tablas
+</div>
+</div>
+
+<p:dataTable
+value="#{dashboardBean.tablas}"
+var="tabla"
+paginator="true"
+rows="10"
+emptyMessage="No se encontraron tablas."
+styleClass="travel-table">
+
+<p:column headerText="Nombre de la tabla">
+<i class="pi pi-table table-icon"></i>
+
+<h:outputText value="#{tabla.nombre}"/>
+</p:column>
+
+<p:column headerText="Cantidad de registros"
+style="text-align:center">
+
+<span class="record-badge">
+<h:outputText
+value="#{tabla.registros}"/>
+</span>
+
+</p:column>
+
+<p:column headerText="Estado"
+style="text-align:center">
+
+<span class="status-active">
+Disponible
+</span>
+
+</p:column>
+
+</p:dataTable>
+
+</section>
+
+<footer class="footer">
+© 2026 TRAVELZEN -
+Sistema Web para la Gestión Operativa
+de una Agencia de Viajes Internacional.
+</footer>
+
+</main>
+
+</div>
+
+</h:form>
+
+</h:body>
+
+</html>
+</CodeBlock>
