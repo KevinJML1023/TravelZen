@@ -1,0 +1,418 @@
+<CodeBlock language="css" editable>
+/* =========================================
+TRAVELZEN - ESTILOS GENERALES
+========================================= */
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Segoe UI', Arial, sans-serif;
+background: #f4f6fa;
+color: #243047;
+}
+
+.layout {
+display: flex;
+min-height: 100vh;
+}
+
+/* =========================================
+MENU LATERAL
+========================================= */
+
+.sidebar {
+width: 260px;
+background: #101d35;
+color: white;
+padding: 28px 18px;
+display: flex;
+flex-direction: column;
+flex-shrink: 0;
+}
+
+.brand {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 5px 8px 35px;
+}
+
+.brand-icon {
+width: 45px;
+height: 45px;
+background: #cda64e;
+border-radius: 13px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #101d35;
+font-size: 23px;
+}
+
+.brand h2 {
+font-size: 21px;
+letter-spacing: 2px;
+}
+
+.brand span {
+color: #cda64e;
+font-size: 9px;
+letter-spacing: 1.5px;
+}
+
+.menu-title {
+color: #8e9bb0;
+font-size: 10px;
+font-weight: bold;
+letter-spacing: 1.5px;
+margin: 24px 10px 12px;
+}
+
+.menu-link {
+display: flex;
+align-items: center;
+gap: 13px;
+padding: 13px 14px;
+color: #bdc7d7;
+text-decoration: none;
+border-radius: 8px;
+margin-bottom: 5px;
+font-size: 13px;
+transition: 0.2s;
+}
+
+.menu-link i {
+font-size: 16px;
+}
+
+.menu-link:hover,
+.menu-link.active {
+background: #293a57;
+color: #e3bd69;
+}
+
+.sidebar-footer {
+margin-top: auto;
+padding: 18px 5px 0;
+color: #aebbd0;
+font-size: 11px;
+}
+
+/* =========================================
+CONTENIDO
+========================================= */
+
+.main-content {
+flex: 1;
+min-width: 0;
+padding: 25px 35px;
+}
+
+.topbar {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 27px;
+}
+
+.topbar h3 {
+font-size: 21px;
+}
+
+.topbar span {
+color: #8993a5;
+font-size: 12px;
+}
+
+.admin-profile {
+display: flex;
+align-items: center;
+gap: 12px;
+font-size: 12px;
+}
+
+.admin-profile span {
+display: block;
+margin-top: 4px;
+}
+
+.avatar {
+width: 42px;
+height: 42px;
+border-radius: 50%;
+background: #d7b66d;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #101d35;
+font-weight: bold;
+}
+
+/* =========================================
+BIENVENIDA
+========================================= */
+
+.welcome {
+background: linear-gradient(120deg, #142440, #263e61);
+border-radius: 15px;
+padding: 35px;
+color: white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 30px;
+overflow: hidden;
+}
+
+.welcome-tag {
+color: #e1bd70;
+font-size: 10px;
+letter-spacing: 2px;
+}
+
+.welcome h1 {
+font-size: 28px;
+margin: 13px 0;
+}
+
+.welcome p {
+color: #c1cada;
+font-size: 13px;
+}
+
+.welcome-icon {
+color: #d7b66d;
+font-size: 75px;
+opacity: 0.8;
+}
+
+/* =========================================
+TITULOS
+========================================= */
+
+.section-heading {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 18px;
+}
+
+.section-heading h2 {
+font-size: 19px;
+margin-bottom: 5px;
+}
+
+.section-heading p {
+color: #9099aa;
+font-size: 12px;
+}
+
+.refresh-button {
+background: #142440 !important;
+border: none !important;
+border-radius: 7px !important;
+padding: 10px 16px !important;
+}
+
+/* =========================================
+TARJETAS DE ESTADISTICAS
+========================================= */
+
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 17px;
+margin-bottom: 35px;
+}
+
+.stat-card {
+background: white;
+border-radius: 12px;
+padding: 22px;
+border: 1px solid #edf0f5;
+box-shadow: 0 3px 12px rgba(20, 36, 64, 0.04);
+}
+
+.stat-icon {
+width: 42px;
+height: 42px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 10px;
+margin-bottom: 15px;
+font-size: 18px;
+}
+
+.gold {
+background: #fff4d9;
+color: #c39530;
+}
+
+.blue {
+background: #e8f0ff;
+color: #3975d4;
+}
+
+.green {
+background: #e5f8ed;
+color: #26965a;
+}
+
+.purple {
+background: #f0eaff;
+color: #8656cf;
+}
+
+.orange {
+background: #fff0e4;
+color: #df863d;
+}
+
+.teal {
+background: #e1f6f4;
+color: #249b92;
+}
+
+.stat-card > span {
+color: #8791a1;
+font-size: 12px;
+}
+
+.stat-card h2 {
+font-size: 30px;
+color: #172943;
+margin: 8px 0;
+}
+
+.stat-card small {
+color: #9ba3b1;
+font-size: 11px;
+}
+
+/* =========================================
+BASE DE DATOS
+========================================= */
+
+.database-section {
+background: white;
+border-radius: 13px;
+padding: 25px;
+border: 1px solid #edf0f5;
+}
+
+.table-counter {
+display: flex;
+gap: 8px;
+align-items: center;
+background: #fff5dc;
+color: #986e1e;
+border-radius: 8px;
+padding: 11px 14px;
+font-size: 12px;
+font-weight: bold;
+}
+
+.table-icon {
+color: #c69a43;
+margin-right: 9px;
+}
+
+.record-badge {
+display: inline-block;
+padding: 5px 13px;
+background: #edf2fa;
+color: #263e61;
+border-radius: 20px;
+font-weight: bold;
+}
+
+.status-active {
+background: #e6f7ed;
+color: #21844b;
+padding: 5px 12px;
+border-radius: 20px;
+font-size: 11px;
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+.footer {
+text-align: center;
+color: #9ba3b1;
+font-size: 11px;
+margin-top: 30px;
+padding: 20px;
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+.stats-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.sidebar {
+width: 220px;
+}
+
+.main-content {
+padding: 20px;
+}
+}
+
+@media (max-width: 650px) {
+
+.layout {
+flex-direction: column;
+}
+
+.sidebar {
+width: 100%;
+}
+
+.sidebar-footer {
+margin-top: 20px;
+}
+
+.stats-grid {
+grid-template-columns: 1fr;
+}
+
+.topbar {
+gap: 15px;
+flex-wrap: wrap;
+}
+
+.welcome {
+padding: 23px;
+}
+
+.welcome h1 {
+font-size: 22px;
+}
+
+.welcome-icon {
+display: none;
+}
+
+.section-heading {
+align-items: flex-start;
+gap: 12px;
+flex-wrap: wrap;
+}
+
+.database-section {
+padding: 14px;
+}
+}
+</CodeBlock>
